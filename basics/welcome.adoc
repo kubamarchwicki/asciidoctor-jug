@@ -1,0 +1,187 @@
+= W poszukiwaniu bożków dokumentacji
+Jakub Marchwicki <https://twitter.com/kubem[@kubem]>
+:icons: font
+:imagesdir: images
+:docinfo1:
+:source-highlighter: coderay
+:image-links: http://tiny.cc/adoc
+
+//tag::agenda[]
+
+== Agenda
+
+. Co to jest *AsciiDoc*
+.. No dobrze a co to jest *Asciidoctor*
+. A dlaczego to jest fajne?
+. Jak i gdzie tego używać
+// end::agenda[]
+
+//tag::o-mnie[]
+
+== O mnie
+
+image::{image-links}-mug-shot[role="mugshot right"]
+//<1>
+
+* Programista od 10+ lat
+* Trener, konsultant, _speaker_
+* Piszę na link:http://jakub.marchwicki.pl[]
+** Ale piszę też książkę o Spring link:http://leanpub.com/springbook[]
+** A może później o JavaEE link:http://leanpub.com/javaeebook[]
+
+[.logo]
+//<2>
+image:{image-links}-logo-symentis[role="logo"]
+image:{image-links}-logo-bns[role="logo"]
+//end::o-mnie[]
+
+== AsciiDoc
+
+[options=interactive]
+.Syntax tour
+- [x] Paragraphs
+- [x] Headings
+- [x] Lists (ordered and unordered)
+- [x] Links
+- [ ] Tables
+- [ ] 'fenced' blocks
+- [ ] Source code
+- [x] Images
+- [ ] Video
+- [ ] Icons
+- [ ] 'Przypomnienia'
+- [ ] Co to jest to magiczne `:docinfo1:`
+
+=== AsciiDoc vs Asciidoctor
+
+[.compare, cols="2",opts="autowidth, header"]
+|===
+| AsciiDoc | Asciidoctor
+
+a| icon:file-text[]
+
+syntax
+
+a| icon:wrench[]
+
+parser + tools
+
+|===
+
+==== Asciidoctor
+
+[#asciidoctor-elements]
+icon:keyboard-o[]:: edit
+icon:eye[]:: read
+icon:git[]:: version
+icon:share-square-o[]:: share
+icon:flask[]:: convert
+
+=== Przypomnienia
+
+TIP: to są takiej fajne kawałki
+
+[NOTE]
+.Albo całe fragmenty
+====
+I tutaj można wypisywać już wszystko
+
+* Na przykład
+* Lista
+** W
+** dowolnym
+** układzie
+====
+
+[[quotes]]
+=== A te magiczne kreski ====?
+
+image::paulo.jpg[role="left"]
+
+[quote, Paulo Coehlo]
+____
+O tańcu nie da się pisać [...] taniec trzeba tańczyć.
+____
+
+
+=== `docinfo`
+
+.`docinfo` to snippet HTML który zostanie wciągnięty podczas renderowania strony
+
+* `:docinfo:`
+** Dodaje snippet do konkretnego dokumentu
+** include `{document-name}-docinfo.html`
+* `:docinfo1:`
+** Dodaje snippet do wszystkich dokumentów (np. wzajemnych zależności)
+** include `docinfo.html`
+
+=== Kod źródłowy
+
+[source, java]
+----
+public class App {
+
+	public static void main(String... args) {
+		System.out.println("Hello world");
+	}
+
+}
+----
+
+=== Blok kodu źródłowego
+
+.Kod źródłowy możemy
+* Pobierać w formie snippeta z zewnątrz (`include`)
+** Jako cały plik
+** Pojedynczą linie (`lines=1..10;15;19..30`, `lines=10..-1`)
+** Wybrany fragment (`tag::{name}[]` i `end::{name}[]`)
+* Formatować (`indent=0`)
+
+`include::{sourcedir}/com/example/foo/MyClass.java[]`
+
+== Środowisko pracy
+
+*Czyli dlaczego jest to fajne*
+
+.Parsery
+* Asciidoctor jest napisany w Ruby - więc całe środowisko Ruby jest dla nas
+** Jak ktoś lubi ;)
+** Livereload with guard
+* Asciidoctor.js - Opal, Ruby to JS compiler
+** asciidoctor-firefox-addon / chrome extension
+** DocGist
+* Asciidoctorj - JRuby, Ruby JVM runtime
+** sdkman
+** Maven
+** Gradle
+
+.Edytory
+* AsciidocFX
+* Sublime
+* IntelliJ
+
+== Ale po co to mi w programowaniu?
+
+* Documentacja w kodzie
+* Architecture decisions
+* Spring REST Docs
+* Asciidoclet
+
+== Goodies
+
+* Asciidoctor PDF
+* Asciidoctor Diagram
+* Hubpress
+* Asciidoctor-confluence
+
+== Tips
+
+- [x] Write in plain text
+- [ ] Sentence per line
+- [ ] Draft in comments
+- [x] Use attributes (for everything that can change)
+- [ ] Executable documentation (include test classes)
+- [x] Livereload
+- [ ] Black lines at the top and bottom of a file
+- [ ] `pass` macro (or `++++` fence)
+- [ ] link:http://mrhaki.blogspot.ch/search/label/Asciidoc[mrhaki blog]
