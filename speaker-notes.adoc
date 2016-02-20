@@ -1,0 +1,137 @@
+== Asciidoc Speaker Notes
+
+.Przykłady składy składni
+* Zaczynamy od link:http://gist.asciidoctor.org/[]
+** Tytuł (h1)
+** Podtytuł (h2)
+** Autor
+** Lista (numerowana)
++
+----
+include::basics/welcome.adoc[lines=1;2]
+
+include::basics/welcome.adoc[tag=agenda]
+----
+
+** Kolejny rozdział
+** Obrazki
+** Lista (nienumerowana)
++
+----
+include::basics/welcome.adoc[tag=o-mnie]
+----
+
+.Brzydki HTML
+* Przechodzimy na localny serwis - to *wymaga kilka definicji*
+
+.Parę definicji
+* *Content is king!*
+* Co to jest Asciidoc?
+** AsciiDoc was first released in Nov 2002 by Stuart Rackham.
+** It was designed from the start to be a shorthand syntax
+for producing professional documents like DocBook and LaTeX.
++
+----
+include::basics/welcome.adoc[tag=asciidoc]
+----
+* Co to jest Asciidoctor?
+** Parser i narzędzia
++
+----
+include::basics/welcome.adoc[tag=asciidoctor-compare]
+----
++
+----
+include::basics/welcome.adoc[tag=asciidoctor-tools]
+----
+** Na link:http://gist.asciidoctor.org[] samo działa
+** Lokalnie potrzebujemy
+*** Ruby + asciidoctor gem
+*** sdkman + asciidoctorj
+
+.Brzydtki HTML \#2
+* `:docinfo1:` trick
+** Dodać `:docinfo1:` w nagłówkach
+** Pobrać link:http://tiny.cc/adoc-docinfo[] jako `docinfo.html`
++
+[source]
+http --folow http://tiny.cc/adoc-docinfo -o docinfo.html
+* Lokalnie nie zadziałają nam także ikony
+** Dodajmy w nagłówkach `:icons: font` - inaczej lokalnie nie zadziała
+
+.Reszta składni
+* Przypomnienia i blocki
++
+----
+include::basics/welcome.adoc[tag=przypomnienia]
+----
++
+----
+include::basics/welcome.adoc[tag=quotes]
+----
+<1> Co to jest section block
++
+----
+include::basics/welcome.adoc[tag=diagrams]
+----
+* `docinfo`
++
+----
+include::basics/welcome.adoc[tag=docinfo]
+----
+
+.Kod źródłowy
+----
+include::basics/welcome.adoc[tag=source-basics, indent=1]
+----
+
+----
+include::basics/welcome.adoc[tag=source-definitions]
+----
+
+.Środowisko
+----
+include::basics/welcome.adoc[tag=srodowisko]
+----
+
+.Tips
+----
+include::basics/welcome.adoc[tag=tips]
+----
+
+.Other
+Livereload::
+* Guardfile
+* Gradle
+
+Presentations (backends)::
+* reveals.js
+* deck.js
+
+Extenstions::
+* Gradle (asciidoctorj)
+** `jira:ABC-1234[]` w _welcome.adoc_
+** Extension w `build.gradle`
++
+
+[source, gradle]
+----
+    extensions {
+
+        // Implementation for inline macro to replace
+        // jira:<issue-id>[] with a link to the issue.
+        inlinemacro (name: "jira") {
+            parent, target, attributes ->
+
+            options = [
+                "type": ":link",
+                "target": "https://issues.apache.org/jira/browse/${target}".toString()
+            ]
+
+            // Create the link to the issue.
+            createInline(parent, "anchor", target, attributes, options).render()
+        }
+
+    }
+----
+
