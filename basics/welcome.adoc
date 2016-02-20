@@ -20,8 +20,8 @@ Jakub Marchwicki <https://twitter.com/kubem[@kubem]>
 
 == O mnie
 
-image::{image-links}-mug-shot[role="mugshot right"]
 //<1>
+image::{image-links}-mug-shot[role="mugshot right"]
 
 * Programista od 10+ lat
 * Trener, konsultant, _speaker_
@@ -29,12 +29,13 @@ image::{image-links}-mug-shot[role="mugshot right"]
 ** Ale piszę też książkę o Spring link:http://leanpub.com/springbook[]
 ** A może później o JavaEE link:http://leanpub.com/javaeebook[]
 
-[.logo]
 //<2>
+[.logo]
 image:{image-links}-logo-symentis[role="logo"]
 image:{image-links}-logo-bns[role="logo"]
 //end::o-mnie[]
 
+//tag::asciidoc[]
 == AsciiDoc
 
 [options=interactive]
@@ -51,7 +52,10 @@ image:{image-links}-logo-bns[role="logo"]
 - [ ] Icons
 - [ ] 'Przypomnienia'
 - [ ] Co to jest to magiczne `:docinfo1:`
+//end::asciidoc[]
 
+//tag::asciidoctor[]
+//tag::asciidoctor-compare[]
 === AsciiDoc vs Asciidoctor
 
 [.compare, cols="2",opts="autowidth, header"]
@@ -67,7 +71,9 @@ a| icon:wrench[]
 parser + tools
 
 |===
+//end::asciidoctor-compare[]
 
+//tag::asciidoctor-tools[]
 ==== Asciidoctor
 
 [#asciidoctor-elements]
@@ -76,7 +82,10 @@ icon:eye[]:: read
 icon:git[]:: version
 icon:share-square-o[]:: share
 icon:flask[]:: convert
+//end::asciidoctor-tools[]
+//end::asciidoctor[]
 
+//tag::przypomnienia[]
 === Przypomnienia
 
 TIP: to są takiej fajne kawałki
@@ -92,18 +101,40 @@ I tutaj można wypisywać już wszystko
 ** dowolnym
 ** układzie
 ====
+//end::przypomnienia[]
 
-[[quotes]]
+//tag::quotes[]
 === A te magiczne kreski ====?
 
-image::paulo.jpg[role="left"]
+[.quotes]
+//<1>
+****
+image:{image-links}-paulo[]
 
 [quote, Paulo Coehlo]
 ____
 O tańcu nie da się pisać [...] taniec trzeba tańczyć.
 ____
+****
+//end::quotes[]
 
+//tag::diagrams[]
+==== Diagramy
 
+[plantuml]
+....
+hide circle
+hide members
+
+Student --|> Account
+Teacher --|> Account
+
+Account "1" o-- "0..*" Book
+Book *-- Author
+....
+//end::diagrams[]
+
+//tag::docinfo[]
 === `docinfo`
 
 .`docinfo` to snippet HTML który zostanie wciągnięty podczas renderowania strony
@@ -114,20 +145,25 @@ ____
 * `:docinfo1:`
 ** Dodaje snippet do wszystkich dokumentów (np. wzajemnych zależności)
 ** include `docinfo.html`
+//end::docinfo[]
 
+//tag::source[]
+//tag::source-basics[]
 === Kod źródłowy
 
 [source, java]
 ----
 public class App {
 
-	public static void main(String... args) {
-		System.out.println("Hello world");
-	}
+    public static void main(String... args) {
+        System.out.println("Hello world");
+    }
 
 }
 ----
+//end::source-basics[]
 
+//tag::source-definitions[]
 === Blok kodu źródłowego
 
 .Kod źródłowy możemy
@@ -138,7 +174,11 @@ public class App {
 * Formatować (`indent=0`)
 
 `include::{sourcedir}/com/example/foo/MyClass.java[]`
+//end::source-definitions[]
+//end::source[]
 
+
+//tag::srodowisko[]
 == Środowisko pracy
 
 *Czyli dlaczego jest to fajne*
@@ -160,20 +200,23 @@ public class App {
 * Sublime
 * IntelliJ
 
-== Ale po co to mi w programowaniu?
+=== Ale po co to mi w programowaniu?
 
 * Documentacja w kodzie
 * Architecture decisions
 * Spring REST Docs
 * Asciidoclet
 
-== Goodies
+=== Goodies
 
 * Asciidoctor PDF
 * Asciidoctor Diagram
 * Hubpress
 * Asciidoctor-confluence
+//end::srodowisko[]
 
+
+//tag::tips[]
 == Tips
 
 - [x] Write in plain text
@@ -185,3 +228,4 @@ public class App {
 - [ ] Black lines at the top and bottom of a file
 - [ ] `pass` macro (or `++++` fence)
 - [ ] link:http://mrhaki.blogspot.ch/search/label/Asciidoc[mrhaki blog]
+//end::tips[]
