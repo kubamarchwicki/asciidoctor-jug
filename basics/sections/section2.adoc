@@ -1,0 +1,14 @@
+
+= Sections: second file
+
+Lorem impsum - some lead text
+
+[[section]]
+== Section 2.1
+
+.Unordered List
+* One
+* Two
+** Two and a half
+* Three
+

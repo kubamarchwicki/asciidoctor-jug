@@ -1,0 +1,10 @@
+= Secions example: includes
+
+This demonstartes how to use and include subfiles
+
+== Inclusion
+
+include::section1.adoc[leveloffset=+2]
+
+include::section2.adoc[leveloffset=+2]
+

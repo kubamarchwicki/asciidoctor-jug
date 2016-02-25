@@ -1,0 +1,8 @@
+= Secions example: links
+
+This demonstartes how to use and include subfiles
+
+== Deep linking
+
+* <<section1.adoc#section, First link>>
+* <<section2.adoc#section, Second link>>
