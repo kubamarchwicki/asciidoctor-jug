@@ -1,0 +1,15 @@
+= Wstęp do Asciidoctora
+
+To są materiały do prezentacji "W poszukiwaniu bożków dokumentacji"
+
+.Folder *basics*
+* Przykładowy dokument AsciiDoc który powstawał na żywo podczas prezentacji
+** `build.gradle` w katalogu głównym pokazuje integrację z Gradle
+*** Automatyczne parsowanie plików AsciiDoc
+*** Livereload
+** To samo można uzyskać poprzez Ruby (jak ktoś lubi). Konfiguracja jest w pliku `Guardfile`
+
+.Folder *slides*
+* Prezenacja pokazywana na początku spotkania
+** Slajdy HTML można samodzielnie zbudować `gradle asciidoctor`
+** Wersja PDF `gradle asciidoctor generatePdf`

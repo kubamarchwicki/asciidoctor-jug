@@ -1,0 +1,138 @@
+= W poszukiwaniu bożków dokumentacji
+Jakub Marchwicki <http://github.com/kubamarchwicki[@kubem]>
+:idprefix: slide_
+:title-slide-background-image: code-example.jpg
+:title-slide-background-size: cover
+:icons: font
+:imagesdir: images
+:revealjs_theme: poang
+:revealjs_transition: fade
+:revealjs_progress: false
+:revealjs_history: true
+:revealjs_controls: false
+:revealjs_customtheme: css/poang.css
+:revealjs_width: 1280
+:revealjs_height: 720
+:source-highlighter: coderay
+
+== Agenda
+
+* Co to jest *AsciiDoc*
+** No dobrze a co to jest *Asciidoctor*
+* A dlaczego to jest fajne?
+* Jak i gdzie tego używać?
+
+[#aboutme%notitle]
+== Who am I?
+
+image::logo-bns.png[width=190, role="logo"]
+image::logo-symentis.png[width=190, role="logo"]
+
+* Programista od 10+ lat
+* Trener, konsultant, _speaker_
+* Piszę na link:http://jakub.marchwicki.pl[]
+** Chciałbym napisać też książkę, np o Springu +
+   link:http://leanpub.com/springbook[]
+** A może później o JavaEE link:http://leanpub.com/javaeebook[]
+
+[data-background="#eee"]
+== Dokumentacja w projekcie informatycznym
+
+[%step.meh]
+* icon:meh-o[5x]
+
+== Narzędzia
+
+[%step]
+* Excel
+* Word
+* Enterprise architect
+* Confluence
+* Wygenerowane HTMLe (Swagger)
+
+[NOTE.speaker]
+--
+Coś jeszcze tutaj dodać?
+--
+
+== Czy coś ma prawo nie zadziałać?
+
+=== Wszystko?
+
+[%notitle]
+== Project documentation v0.1
+
+image::documents1.png[]
+
+[%notitle]
+== Project documentation v0.3
+
+image::documents2.png[]
+
+[NOTE.speaker]
+--
+* new release - 30 pages less
+* No diffs, changes not traceable
+* totally outside developers workflow - developers are the biggers stakeholders
+* versioning (in manual way), no blame and "lub czasopisma" not traceable
+--
+
+[%notitle, data-background-image=images/documentation-flow.png, data-background-size=cover]
+== How your documentation flow might look like
+
+[NOTE.speaker]
+--
+An example information flow might look like - this is how it looks in one of a projects I participated in
+
+* We spread documentation over multiple siloses, different systems
+* One more example - simlar to the one previously.
+** We mapped system were project related data is stored.
+* This is not going in a good direction
+
+We regard it as solution architecture. *The solution architecture*
+--
+
+== Co jeszcze może tu nie zadziałać?
+
+[NOTE.speaker]
+--
+* Design?
+** you hardly ever know upfront the complete Container View from the C4 model
+** what you design is heavily impacted by the feedback from the development team
+** but still - we are keeping it in a different silo
+* Often those closest to products (actually moving pixels/ cutting code) - have best ideas what the product should actually do
+* How we can make the actual design be as close to developer's workflow as possible
+--
+
+[%notitle, data-background-image=images/arch-vs-reality-ebCommunication-cut.png, data-background="#fff", data-background-size=cover]
+== This is what we want to avoid
+
+[%notitle, data-background-image=images/arch-vs-reality-ebCommunication2-cut.png, data-background="#fff", data-background-size=cover]
+== As this how it looked in the original documents
+
+== Jak żyć?
+
+[%step]
+* Dokumentacja blisko kodu
+** Tekstowa
+** W repozytorium kodu
+** Wersjonowana
+* Dokumentacja zmienia się wraz z kodem
+
+[data-background="#eee"]
+== Demo
+
+[data-background-image=images/slowclap.gif, data-background-size=cover]
+== Dziękuję
+
+== Links & Goodies
+
+----
+Follow me on twitter
+  @kubem
+
+This presentation was made with AsciiDoc
+Presentation source and examples
+  https://github.com/kubamarchwicki/asciidoctor-jug
+  -- including links
+----
