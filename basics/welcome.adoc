@@ -126,11 +126,19 @@ ____
 hide circle
 hide members
 
-Student --|> Account
-Teacher --|> Account
+Student -up-|> Account
+Teacher -up-|> Account
 
-Account "1" o-- "0..*" Book
-Book *-- Author
+Account "1" o-right- "0..*" Book
+Book *-down- Author
+
+note as N1
+	A simple
+	multiple lines
+	note
+end note
+
+Book -right- N1
 ....
 //end::diagrams[]
 
